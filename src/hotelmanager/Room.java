@@ -3,15 +3,17 @@ package hotelmanager;
 public class Room {
     private int id, numberToilets, numberBedrooms;
     private String roomName, roomStatus;
+    private double rentalPrice;
 
-    public Room() {
+    public Room(String nameRoom, int numberBedrooms, int numberToilets, double rentalPrice, String roomStatus) {
     }
 
-    public Room(int id, String roomName, int numberBedrooms, int numberToilets, String roomStatus) {
+    public Room(int id, String roomName, int numberBedrooms, int numberToilets, double rentalPrice, String roomStatus) {
         this.id = id;
         this.numberToilets = numberToilets;
         this.numberBedrooms = numberBedrooms;
         this.roomName = roomName;
+        this.rentalPrice = rentalPrice;
         this.roomStatus = roomStatus;
     }
 
@@ -47,7 +49,7 @@ public class Room {
         this.roomName = roomName;
     }
 
-    public String isRoomStatus() {
+    public String getRoomStatus() {
         return roomStatus;
     }
 
@@ -55,14 +57,23 @@ public class Room {
         this.roomStatus = roomStatus;
     }
 
+    public double getRentalPrice() {
+        return rentalPrice;
+    }
+
+    public void setRentalPrice(double rentalPrice) {
+        this.rentalPrice = rentalPrice;
+    }
+
     @Override
     public String toString() {
         return "Room{" +
                 "id=" + id +
-                ", roomName='" + roomName +
-                ", numberBedrooms=" + numberBedrooms +
-                ", numberToilets=" + numberToilets + '\'' +
-                ", roomStatus=" + roomStatus +
+                ", roomName= '" + roomName + '\'' +
+                ", numberBedrooms= " + numberBedrooms +
+                ", numberToilets= " + numberToilets +
+                ", rentalPrice= " + rentalPrice +
+                ", roomStatus= '" + roomStatus + '\'' +
                 '}';
     }
 }

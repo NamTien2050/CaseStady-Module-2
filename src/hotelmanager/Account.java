@@ -17,11 +17,11 @@ public class Account {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getAccount() {
+    public String getuseName() {
         return useName;
     }
 
-    public void setAccount(String useName) {
+    public void setuseName(String useName) {
         this.useName = useName;
     }
 

@@ -1,35 +1,36 @@
-package hotelmanager;
+package thimodule2;
+
 
 import java.io.*;
 
-public class ReadWriteAccount {
-    public void account() {
-        AccountManagement.accountList = null;
+public class WriteReadphone {
+    public void phone() {
+        TelephoneManager.listPhone = null;
     }
 
-    public static void writeAccount() {
-        Account createAccount = new Account();
+    public static void writePhoneList() {
+        TelephoneDirectory createAPhoneList = new TelephoneDirectory();
         BufferedWriter bufferedWriter = null;
         try {
-            FileWriter fileWriter = new FileWriter("D:\\Code Gym\\Module 2\\CaseStady\\src\\hotelmanager\\Account.csv");
+            FileWriter fileWriter = new FileWriter("D:\\Code Gym\\Module 2\\CaseStady\\TelephoneList.csv",true);
             bufferedWriter = new BufferedWriter(fileWriter);
-            for (Account customer : AccountManagement.accountList) {
-                bufferedWriter.write(createAccount.toString());
+            for (TelephoneDirectory phone : TelephoneManager.listPhone) {
+                bufferedWriter.write(createAPhoneList.toString());
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public void readAccount() {
+    public void readPhoneList() {
         BufferedReader bufferedReader = null;
         try {
-            FileReader fileReader = new FileReader("D:\\Code Gym\\Module 2\\CaseStady\\src\\hotelmanager\\Account.csv");
+            FileReader fileReader = new FileReader("D:\\Code Gym\\Module 2\\CaseStady\\TelephoneList.csv");
             bufferedReader = new BufferedReader(fileReader);
             String line = "";
             while ((line = bufferedReader.readLine()) != null) {
                 String[] str = line.split(",");
-                AccountManagement.accountList.add(new Account(str[0], str[1], str[2], Integer.parseInt(str[3].trim()), str[4], str[5], str[6]));
+                TelephoneManager.listPhone.add(new TelephoneDirectory(str[0], str[1], str[2],str[3], str[4], str[5], str[6]));
             }
         } catch (IOException e) {
             e.printStackTrace();
