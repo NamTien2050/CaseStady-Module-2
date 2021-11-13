@@ -24,7 +24,7 @@ public class ReadWriteAccount {
     public void readAccount() {
         BufferedReader bufferedReader = null;
         try {
-            FileReader fileReader = new FileReader("D:\\Code Gym\\Module 2\\CaseStady\\src\\hotelmanager\\Account.csv");
+            FileReader fileReader = new FileReader("F:\\Code Gym\\Module 2\\CaseStady\\src\\hotelmanager\\Account.csv");
             bufferedReader = new BufferedReader(fileReader);
             String line = "";
             while ((line = bufferedReader.readLine()) != null) {
